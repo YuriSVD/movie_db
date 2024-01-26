@@ -1,0 +1,82 @@
+.MovieDiv {
+    width: 17vw;
+    height: 463px;
+    border-radius: 20px;
+    border: solid grey 1px;
+    margin-bottom: 10px;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    /*height: 100%;*/
+    overflow: hidden;
+}
+.MovieDiv::before {
+    content: '';
+    position: absolute;
+    bottom: -45%;
+    left: 0;
+    z-index: 1;
+    transition: .3s;
+}
+
+.MovieDiv img {
+    width: 17vw;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    /*position: absolute;???*/
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.info {
+    height: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info h4 {
+    margin: 0;
+}
+.details {
+    width: 17vw;
+    height: 463px;
+    box-sizing: border-box;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 10px;
+    background: #000a;
+    backdrop-filter: blur(16px) saturate(120%);
+    transition: .3s;
+    color: #fff;
+    z-index: 2;
+    border-radius: 20px;
+}
+.Box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /*width: 325px;*/
+    overflow: hidden;
+    /*box-shadow: 0 5px 10px rgba(0, 0, 0, .2);*/
+}
+.Box:hover .MovieDiv::before {
+    top: 0;
+}
+
+.Box:hover .details {
+    top: 0;
+}
+.rating {
+    border: white 1px solid;
+    color: white;
+}
+.ratingDiv {
+    display: flex;
+    justify-content: space-between;
+}

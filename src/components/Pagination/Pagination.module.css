@@ -1,0 +1,11 @@
+.PaginationDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PaginationDiv button {
+    border: none;
+    background-color: transparent;
+    font-size: 2vw;
+    cursor: pointer;
+}

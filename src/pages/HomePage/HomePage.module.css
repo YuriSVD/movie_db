@@ -1,0 +1,39 @@
+.CarouselDiv {
+    display: flex;
+    overflow: hidden;
+}
+.MoviesDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.Carousel {
+    display: flex;
+    transition: translate;
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+.buttonsDiv {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.prev:hover  {
+    background: linear-gradient(to left, transparent 0, black 100%);
+}
+
+.next:hover {
+    background: linear-gradient(to right, transparent 0, black 100%);
+}

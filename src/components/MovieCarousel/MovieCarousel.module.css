@@ -1,0 +1,30 @@
+.MovieCarousel {
+    width: 100vw;
+    height: 80vh;
+    background-size: 100vw;
+    display: flex;
+    align-items: flex-end;
+}
+
+.info {
+    height: 10vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, transparent 0, black 100%);
+}
+
+.MovieCarousel h2 {
+    margin: 0;
+    color: white;
+}
+
+.MuiRating-decimal {
+    border: white 1px solid;
+}
+
+.rating {
+    border: white 1px solid;
+    color: white;
+}
+.ratingDiv {
+    display: flex;
+}

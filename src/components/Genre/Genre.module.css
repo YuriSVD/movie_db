@@ -1,0 +1,7 @@
+.GenreButton {
+    /*width: 10vw;*/
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 1vw;
+}
