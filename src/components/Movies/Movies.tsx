@@ -6,8 +6,9 @@ import {Movie} from "../Movie";
 import css from "./Movies.module.css";
 const Movies:FC = () => {
     const {page, movies} = useAppSelector(state => state.movieReducer);
+    const {selectedGenres} = useAppSelector(state => state.genreReducer);
     const dispatch = useAppDispatch();
-    const genresId = "";
+    const genresId = selectedGenres.map(genre => genre.id).toString();
     useEffect(() => {
         dispatch(movieActions.getAll({genresId, page}));
     }, [page, dispatch, genresId]);

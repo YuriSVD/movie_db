@@ -1,10 +1,10 @@
 .MovieDiv {
     width: 17vw;
-    height: 463px;
-    border-radius: 20px;
+    height: 24.11vw/*463px*/;
+    border-radius: 1.04vw /*20px*/;
     border: solid grey 1px;
-    margin-bottom: 10px;
-
+    margin-bottom: 0.52vw /*10px*/;
+    box-sizing: border-box;
     position: relative;
     top: 0;
     left: 0;
@@ -22,8 +22,8 @@
 
 .MovieDiv img {
     width: 17vw;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 1.04vw/*20px*/;
+    border-top-right-radius: 1.04vw/*20px*/;
 
     /*position: absolute;???*/
     top: 0;
@@ -44,7 +44,7 @@
 }
 .details {
     width: 17vw;
-    height: 463px;
+    height: 24.11vw /*463px*/;
     box-sizing: border-box;
     position: absolute;
     top: -100%;
@@ -55,7 +55,8 @@
     transition: .3s;
     color: #fff;
     z-index: 2;
-    border-radius: 20px;
+    border-radius: 1.04vw /*20px*/;
+    overflow: hidden;
 }
 .Box {
     display: flex;
@@ -73,10 +74,13 @@
     top: 0;
 }
 .rating {
+    padding: 2px;
+    box-sizing: border-box;
+    margin-left: 0.52vw /*10px*/;
     border: white 1px solid;
     color: white;
 }
 .ratingDiv {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }

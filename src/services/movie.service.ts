@@ -1,5 +1,5 @@
 import {IRes} from "../types";
-import {IMovieDetails, IPage} from "../interfaces";
+import {IMovieDetails, IPage, IVideoPage} from "../interfaces";
 import {axiosService} from "./axios.service";
 import {apiKey, urls} from "../configs";
 
@@ -10,7 +10,8 @@ const movieService = {
     getTrendingMovies: (): IRes<IPage> => axiosService.get(urls.movie + urls.now_playing + apiKey),
     getPopularMovies: (): IRes<IPage> => axiosService.get(urls.movie + urls.popular + apiKey),
     getMovieDetails: (id: string): IRes<IMovieDetails> => axiosService.get(`${urls.movie}/${id}${apiKey}`),
-    searchMovies:(query: string, page: number): IRes<IPage> => axiosService.get(urls.search + urls.movie + apiKey, {params: {query, page}})
+    searchMovies:(query: string, page: number): IRes<IPage> => axiosService.get(urls.search + urls.movie + apiKey, {params: {query, page}}),
+    getVideosByMovieId: (id: string): IRes<IVideoPage> => axiosService.get(`${urls.movie}/${id}${urls.videos}${apiKey}`)
 }
 
 export {movieService};

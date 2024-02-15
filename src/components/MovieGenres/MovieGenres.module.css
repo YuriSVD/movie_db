@@ -1,0 +1,16 @@
+.MovieGenres {
+    display: flex;
+    margin: 0.52vw 0;
+}
+
+.MovieGenres p {
+    border-right: white solid 1px;
+    padding: 0.26vw;
+}
+
+.MovieGenres p:last-child {
+    border: none;
+}
+.MovieGenres p:first-child {
+    padding-left: 0;
+}

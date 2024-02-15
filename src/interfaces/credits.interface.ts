@@ -1,7 +1,7 @@
-import {IPerson} from "./index";
+import {IActor, ICrewMember} from "./index";
 
 export interface ICredits {
     id: number;
-    cast: IPerson[];
-    crew: IPerson[];
+    cast: IActor[];
+    crew: ICrewMember[];
 }

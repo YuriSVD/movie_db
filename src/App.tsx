@@ -1,9 +1,8 @@
 import React from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 
-import {MainLayout, HomePage, MoviePage, GenresPage} from "./pages";
+import {MainLayout, HomePage, MoviePage, SearchPage, CastPage} from "./pages";
 import {MovieDetails} from "./components";
-import {GenreMoviesPage} from "./pages/GenreMoviesPage";
 
 function App() {
   return (
@@ -14,9 +13,8 @@ function App() {
                 <Route path={"home"} element={<HomePage/>}/>
                 <Route path={"movies"} element={<MoviePage/>}/>
                 <Route path={"movies/:movieId"} element={<MovieDetails/>}/>
-                <Route path={"genres"} element={<GenresPage/>}>
-                    <Route path={":genresId"} element={<GenreMoviesPage/>}/>
-                </Route>
+                <Route path={"search"} element={<SearchPage/>}/>
+                <Route path={"movies/:movieId/cast"} element={<CastPage/>}/>
             </Route>
         </Routes>
     </div>

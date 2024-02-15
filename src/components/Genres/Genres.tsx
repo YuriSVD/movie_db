@@ -1,4 +1,5 @@
 import React, {FC, useEffect} from 'react';
+
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../redux";
 import {Genre} from "../Genre";

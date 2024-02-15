@@ -30,10 +30,10 @@ button {
     position: absolute;
 }
 
-.prev:hover  {
+/*.prev:hover  {
     background: linear-gradient(to left, transparent 0, black 100%);
 }
 
 .next:hover {
     background: linear-gradient(to right, transparent 0, black 100%);
-}
+}*/

@@ -1,7 +1,7 @@
 import {AxiosError} from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {IMovie, IMovieDetails, IPage} from "../../interfaces";
+import {IMovie, IMovieDetails, IPage, IVideoPage, IVideo} from "../../interfaces";
 import {movieService} from "../../services";
 
 interface IState {
@@ -13,6 +13,9 @@ interface IState {
     trendingMovies: IMovie[];
     popularMovies: IMovie[];
     totalPages: number;
+    query: string;
+    videos: IVideo[];
+    mRank: string;
 }
 
 const initialState: IState = {
@@ -23,7 +26,10 @@ const initialState: IState = {
     upcomingMovies: [],
     trendingMovies: [],
     popularMovies: [],
-    totalPages: null
+    totalPages: null,
+    query: null,
+    videos: [],
+    mRank: "trending"
 }
 
 
@@ -105,11 +111,24 @@ const getMovieDetails = createAsyncThunk<IMovieDetails, { movieId: string }>(
     }
 );
 
-const searchMoviesByName = createAsyncThunk<IPage, {query: string, page: number}>(
+const searchMoviesByName = createAsyncThunk<IPage, { query: string, page: number }>(
     "movieSlice/searchMoviesByName",
     async ({query, page}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.searchMovies(query, page);
+            return data;
+        } catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data);
+        }
+    }
+)
+
+const getVideosByMovieId = createAsyncThunk<IVideoPage, { movieId: string }>(
+    "movieSlice/getVideosByMovieId",
+    async ({movieId}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getVideosByMovieId(movieId);
             return data;
         } catch (e) {
             const err = e as AxiosError;
@@ -124,6 +143,12 @@ const slice = createSlice({
     reducers: {
         pagination: (state, actions) => {
             state.page = actions.payload;
+        },
+        setSearchingTitle: (state, actions) => {
+            state.query = actions.payload;
+        },
+        setMovieRank: (state, actions) => {
+            state.mRank = actions.payload;
         }
     },
     extraReducers: builder => {
@@ -157,6 +182,9 @@ const slice = createSlice({
                 state.movies = action.payload.results;
                 state.totalPages = action.payload.total_pages;
             })
+            .addCase(getVideosByMovieId.fulfilled, (state, action) => {
+                state.videos = action.payload.results;
+            })
     }
 })
 
@@ -170,7 +198,8 @@ const movieActions = {
     getUpcomingMovies,
     getPopularMovies,
     getTrendingMovies,
-    searchMoviesByName
+    searchMoviesByName,
+    getVideosByMovieId
 }
 
 export {movieReducer, movieActions}

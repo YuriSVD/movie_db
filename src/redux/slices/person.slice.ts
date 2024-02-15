@@ -1,16 +1,18 @@
 import {AxiosError} from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {IPerson} from "../../interfaces";
+import {IActor, ICrewMember} from "../../interfaces";
 import {personService} from "../../services";
 import {ICredits} from "../../interfaces";
 
 interface IState {
-    persons: IPerson[];
+    actors: IActor[];
+    crewMembers: ICrewMember[];
 }
 
 const initialState: IState = {
-    persons: []
+    actors: [],
+    crewMembers: []
 }
 
 const getAll = createAsyncThunk<ICredits, { movieId: string; }>(
@@ -33,7 +35,8 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                state.persons = action.payload.cast;
+                state.actors = action.payload.cast;
+                state.crewMembers = action.payload.crew;
             })
     }
 })

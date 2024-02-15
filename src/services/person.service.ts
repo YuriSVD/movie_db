@@ -1,6 +1,6 @@
 import {axiosService} from "./axios.service";
 import {apiKey, urls} from "../configs";
-import {ICredits} from "../interfaces/credits.interface";
+import {ICredits} from "../interfaces";
 import {IRes} from "../types";
 
 const personService = {

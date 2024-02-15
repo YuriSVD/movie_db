@@ -1,0 +1,9 @@
+.MovieDiv {
+    display: flex;
+    width: 80vw;
+    background: #00143C;
+    color: black;
+}
+.MovieDiv img {
+    width: 200px;
+}
