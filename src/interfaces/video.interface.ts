@@ -3,4 +3,6 @@ export interface IVideo {
     site: string;
     type: string;
     id: string;
+    name: string;
+    published_at: string;
 }

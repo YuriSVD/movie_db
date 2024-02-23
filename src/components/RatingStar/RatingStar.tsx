@@ -1,14 +1,14 @@
 import React, {FC} from 'react';
 import {Rating} from "@mui/material";
 import {StarBorder} from "@mui/icons-material";
-import css from "../Movie/Movie.module.css";
+import css from "./RatingStar.module.css";
 
 interface IProps {
     rating: number
 }
 const RatingStar:FC<IProps> = ({rating}) => {
     return (
-        <div className={css.ratingDiv}>
+        <div className={css.RatingStar}>
             <Rating name={"rating star"}
                     value={rating}
                     precision={0.1}

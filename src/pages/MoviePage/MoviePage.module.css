@@ -1,4 +1,6 @@
 .MoviePage {
+    padding: 1.04vw;
+    box-sizing: border-box;
     display: flex;
     align-items: flex-start;
 }

@@ -13,7 +13,7 @@ const Movies:FC = () => {
         dispatch(movieActions.getAll({genresId, page}));
     }, [page, dispatch, genresId]);
     return (
-        <div className={css.MoviesDiv}>
+        <div className={css.Movies}>
             {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
         </div>
     );

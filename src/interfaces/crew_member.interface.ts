@@ -3,4 +3,5 @@ export interface ICrewMember {
     name: string;
     job: string;
     profile_path: string;
+    department: string;
 }

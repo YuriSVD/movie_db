@@ -7,24 +7,10 @@
 }
 
 .info {
+    display: flex;
+    justify-content: space-between;
     height: 10vh;
     width: 100vw;
     background: linear-gradient(to bottom, transparent 0, black 100%);
-}
-
-.MovieCarousel h2 {
-    margin: 0;
-    color: white;
-}
-
-.MuiRating-decimal {
-    border: white 1px solid;
-}
-
-.rating {
-    border: white 1px solid;
-    color: white;
-}
-.ratingDiv {
-    display: flex;
+    padding: 0 30px;
 }

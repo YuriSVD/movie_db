@@ -1,38 +1,35 @@
 import React, {FC} from 'react';
-import {IActor} from "../../interfaces";
-import {posterURL, urls} from "../../configs";
-import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
+
+import {posterURL, urls} from "../../configs";
+import DummyPhoto from "../../dummy_photos/dummy-person.jpg"
+import {IActor} from "../../interfaces";
+
 interface IProps {
     actor: IActor;
 }
 
 const Actor:FC<IProps> = ({actor}) => {
-    const {name, profile_path, character} = actor;
-    const imgPath = posterURL + urls.w300PosterSize + profile_path;
+    const {id, name, profile_path, character} = actor;
     const navigate = useNavigate();
     return (
-        <Card sx={{maxWidth: 200, marginRight: "10px"}}>
-            <CardActionArea onClick={() => navigate("/person")}>
-                <CardMedia
+        <Card sx={{maxWidth: "10.4vw", marginRight: "0.5vw"}}>
+            <CardActionArea onClick={() => navigate(`/person/${id}`)}>
+                <CardMedia sx={{height: "13.3vw"}}
                     component="img"
-                    image={imgPath}
+                    image={profile_path === null ? DummyPhoto : posterURL + urls.w300PosterSize + profile_path}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h6">
+                    <Typography sx={{fontSize: "1.1vw"}} gutterBottom variant="h6">
                         {name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography sx={{fontSize: "0.75vw"}} variant="body2" color="text.secondary">
                         {character}
                     </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
-        /*<div>
-            <img src={imgPath} alt={name}/>
-            <p>{name}</p>
-            <p>{character}</p>
-        </div>*/
     );
 };
 

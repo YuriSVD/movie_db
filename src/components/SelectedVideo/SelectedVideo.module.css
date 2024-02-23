@@ -1,0 +1,11 @@
+.video {
+    margin: 5px;
+    height: 360px;
+    transition: 1s;
+    overflow: hidden;
+    width: 60px;
+    border-radius: 5px;
+}
+.active {
+    width: 640px;
+}

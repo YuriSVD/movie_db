@@ -20,7 +20,8 @@ const urls = {
     popular: "/popular",
     search: "/search",
     videos: "/videos",
-    watch: "/watch?v="
+    watch: "/watch?v=",
+    person: "/person"
 };
 
 export {movieURL, urls, apiKey, posterURL, youtubeURL}

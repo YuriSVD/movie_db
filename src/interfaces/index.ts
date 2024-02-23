@@ -6,5 +6,6 @@ export * from "./genres.interface";
 export * from "./movie.details.interface";
 export * from "./movie.interface";
 export * from "./page.interface";
+export * from "./person.details.interface";
 export * from "./video.interface";
-export * from "./video_page";
+export * from "./video.page.interface";

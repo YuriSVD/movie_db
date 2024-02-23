@@ -16,6 +16,8 @@ interface IState {
     query: string;
     videos: IVideo[];
     mRank: string;
+    numberOfVideo: number;
+    activeVideo: boolean;
 }
 
 const initialState: IState = {
@@ -29,11 +31,13 @@ const initialState: IState = {
     totalPages: null,
     query: null,
     videos: [],
-    mRank: "trending"
+    mRank: "trending",
+    numberOfVideo: 0,
+    activeVideo: false
 }
 
 
-const getAll = createAsyncThunk<IPage, { genresId: string, page: number }>(
+const getAll = createAsyncThunk<IPage, { genresId: string, page: number}>(
     "movieSlice/getAll",
     async ({genresId, page}, {rejectWithValue}) => {
         try {
@@ -147,9 +151,13 @@ const slice = createSlice({
         setSearchingTitle: (state, actions) => {
             state.query = actions.payload;
         },
-        setMovieRank: (state, actions) => {
-            state.mRank = actions.payload;
-        }
+        setNumberOfVideo: (state, actions) => {
+            state.numberOfVideo = actions.payload;
+        },
+        setActiveVideo: (state, actions) => {
+            state.activeVideo = actions.payload;
+        },
+
     },
     extraReducers: builder => {
         builder

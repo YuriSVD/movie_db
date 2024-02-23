@@ -1,0 +1,12 @@
+.RatingStar {
+    display: flex;
+    align-items: center;
+}
+
+.rating {
+    border: white 1px solid;
+    color: white;
+    margin-left: 0.52vw;
+    padding: 0.1vw;
+    box-sizing: border-box;
+}
